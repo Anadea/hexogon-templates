@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Games API
+POST    /games                      controllers.api.GameController.start
+GET     /games/*gameId              controllers.api.GameController.makeMove(gameId: String)
+PUT     /games/*gameId              controllers.api.GameController.handleMove(gameId: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
