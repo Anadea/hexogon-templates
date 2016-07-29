@@ -22,7 +22,7 @@ public class GameController {
 
     @RequestMapping(value = "/{gameId}", method = RequestMethod.GET)
     @ResponseBody
-    public ClientMove makeMove(@PathVariable("gameId") int gameId, @RequestParam("color") int color) {
+    public ClientMove makeMove(@PathVariable("gameId") String gameId, @RequestParam("color") int color) {
         System.out.println("makeMove endpoint hit");
         System.out.println("gameId=" + gameId);
         System.out.println("color=" + color);
@@ -32,7 +32,7 @@ public class GameController {
 
     @RequestMapping(value = "/{gameId}", method = RequestMethod.PUT)
     @ResponseBody
-    public ResponseStatusDto handleMove(@PathVariable("gameId") int gameId, @RequestBody ServerMove serverMove) {
+    public ResponseStatusDto handleMove(@PathVariable("gameId") String gameId, @RequestBody ServerMove serverMove) {
         System.out.println("handleMove endpoint hit");
         System.out.println("gameId=" + gameId);
         System.out.println(serverMove);
@@ -42,7 +42,7 @@ public class GameController {
 
     @RequestMapping(value = "/{gameId}", method = RequestMethod.DELETE)
     @ResponseBody
-    public ResponseStatusDto finishGame(@PathVariable("gameId") int gameId) {
+    public ResponseStatusDto finishGame(@PathVariable("gameId") String gameId) {
         System.out.println("finishGame endpoint hit");
         System.out.println("gameId=" + gameId);
 
