@@ -9,4 +9,4 @@ use Mix.Config
 # kept out of version control and might be hard to recover
 # or recreate for your teammates (or you later on).
 config :four_color_bots, FourColorBots.Endpoint,
-  secret_key_base: System.get_env("SECRET_KEY_BASE")
+  secret_key_base: "qTyZkrPHnYmWyQq7/xmBXnsDXUuXFKfPHg3+47ca3bSFKDz1/PDy5L+j03IPGZYl"
