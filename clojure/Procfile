@@ -1,0 +1,1 @@
+web: java $JVM_OPTS -cp target/com-anahoret-bot-standalone.jar clojure.main -m com-anahoret-bot.web
