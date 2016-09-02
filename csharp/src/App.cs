@@ -10,7 +10,6 @@ namespace Nancy.FourColors
 
 		static readonly string HOST = Environment.GetEnvironmentVariable ("HOST");
 		static readonly string PORT = Environment.GetEnvironmentVariable ("PORT");
-		static readonly string DYNO = Environment.GetEnvironmentVariable ("DYNO");
 
 		static NancyHost Host;
 
@@ -18,7 +17,7 @@ namespace Nancy.FourColors
 
 		static Env CurrentEnv {
 			get {
-				return HOST == null ? Env.Staging : DYNO == null ? Env.Deployment : Env.Heroku;
+				return PORT == null ? Env.Staging : Env.Heroku;
 			}
 		}
 
