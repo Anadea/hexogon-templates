@@ -17,7 +17,7 @@ namespace Nancy.FourColors
 
 				Console.WriteLine ("JSON: " + this.Request.Body.AsString());
 
-				var json = "{'status': 'ok'}";
+				var json = "{\"status\": \"ok\"}";
 
 				var json_response = (Response)json;
 				json_response.ContentType = "application/json";
@@ -34,7 +34,7 @@ namespace Nancy.FourColors
 					Console.WriteLine("arg = {0}, value = {1}", arg.Key, arg.Value);
 				};
 
-				var json = "{'status': 'ok','figure': 0}";
+				var json = "{\"status\": \"ok\",\"figure\": 0}";
 
 				var json_response = (Response)json;
 				json_response.ContentType = "application/json";
@@ -48,7 +48,7 @@ namespace Nancy.FourColors
 
 				Console.WriteLine ("JSON: " + this.Request.Body.AsString());
 
-				var json = "{'status': 'ok'}";
+				var json = "{\"status\": \"ok\"}";
 
 				var json_response = (Response)json;
 				json_response.ContentType = "application/json";
@@ -60,7 +60,7 @@ namespace Nancy.FourColors
 				Console.WriteLine ("[DELETE] /games/{id}");
 				Console.WriteLine ("ID = " + args.id);
 
-				var json = "{'status': 'ok'}";
+				var json = "{\"status\": \"ok\"}";
 
 				var json_response = (Response)json;
 				json_response.ContentType = "application/json";
