@@ -4,11 +4,11 @@ flyway:
   sql-migration-prefix: migration_
   baseline-on-migrate: true
 
-spring.jpa:
-  database-platform: org.hibernate.dialect.PostgreSQLDialect
-  show-sql: false
-  hibernate.ddl-auto: validate
-
-spring.datasource:
-  driver-class-name: org.postgresql.Driver
-  url: ${database.url:jdbc:postgresql://localhost:5432/bot}
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    hibernate.ddl-auto: validate
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${database.url:jdbc:postgresql://localhost:5432/bot}
