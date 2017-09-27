@@ -1,0 +1,50 @@
+buildscript {
+	ext {
+		kotlinVersion = '1.1.50'
+		springBootVersion = '1.5.7.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+	}
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-spring'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.anahoret'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+jar {
+	archiveName = 'anadea_bot_kotlin.jar'
+}
+compileKotlin {
+	kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+	kotlinOptions.jvmTarget = "1.8"
+}
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
+	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+	runtime('org.springframework.boot:spring-boot-devtools')
+    compile('org.postgresql:postgresql:42.1.4')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+task stage dependsOn([clean, assemble])
+assemble.mustRunAfter clean
