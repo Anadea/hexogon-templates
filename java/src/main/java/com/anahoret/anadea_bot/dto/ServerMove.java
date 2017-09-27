@@ -4,19 +4,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Arrays;
+import java.util.HashMap;
+
 @Getter
 @Setter
 @NoArgsConstructor
 public class ServerMove {
 
-    private int figure;
-    private int color;
+    private HashMap<String, Integer> jumps;
+    private int[][] changes;
 
     @Override
     public String toString() {
         return "ServerMove{" +
-                "figure=" + figure +
-                ", color=" + color +
+                "jumps=" + jumps +
+                ", changes=" + Arrays.deepToString(changes) +
                 '}';
     }
 

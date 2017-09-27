@@ -27,7 +27,7 @@ public class GameController {
         System.out.println("gameId=" + gameId);
         System.out.println("color=" + color);
 
-        return new ClientMove(0);
+        return new ClientMove(new int[]{0,2}, new int[]{0,3});
     }
 
     @RequestMapping(value = "/{gameId}", method = RequestMethod.PUT)

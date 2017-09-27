@@ -11,17 +11,13 @@ import java.util.Arrays;
 @NoArgsConstructor
 public class Board {
 
-    private int width;
-    private int height;
-    private int figures_count;
+    private int size;
     private int[][] cells;
 
     @Override
     public String toString() {
         return "Board{" +
-                "width=" + width +
-                ", height=" + height +
-                ", figures_count=" + figures_count +
+                "size=" + size +
                 ", cells=" + Arrays.deepToString(cells) +
                 '}';
     }

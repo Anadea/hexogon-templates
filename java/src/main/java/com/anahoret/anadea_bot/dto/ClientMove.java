@@ -9,12 +9,13 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ClientMove {
 
-    public ClientMove(int figure) {
+    public ClientMove(int[] move_from, int[] move_to) {
         status = "ok";
-        this.figure = figure;
+        this.move_from = move_from;
+        this.move_to = move_to;
     }
 
     private String status;
-    private int figure;
-
+    private int[] move_from;
+    private int[] move_to;
 }
