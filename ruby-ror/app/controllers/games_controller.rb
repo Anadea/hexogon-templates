@@ -9,7 +9,8 @@ class GamesController < ApplicationController
     p params
     render json: {
       status: :ok,
-      figure: 0
+      move_from: [0,2],
+      move_to: [0,3]
     }
   end
 
