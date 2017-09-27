@@ -30,7 +30,7 @@ func makeMove(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("color=" + color)
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(ClientMove{ Status: "ok", Figure: 0 })
+	json.NewEncoder(w).Encode(ClientMove{ Status: "ok", MoveFrom: [2]int{0,2}, MoveTo: [2]int{0,3} })
 }
 
 func handleMove(w http.ResponseWriter, r *http.Request) {
@@ -76,19 +76,26 @@ func main() {
 }
 
 type Board struct {
-	Width int `json:"width"`
-	Height int `json:"height"`
-	FiguresCount int `json:"figures_count"`
+	Size int `json:"size"`
 	Cells [][]int `json:"cells"`
+}
+
+type Jumps struct {
+	First int `json:"1"`
+	Second int `json:"2"`
 }
 
 type ClientMove struct {
 	Status string `json:"status"`
-	Figure int `json:"figure"`
+	MoveFrom [2]int `json:"move_from"`
+	MoveTo [2]int `json:"move_to"`
 }
 
 type Game struct {
 	Id string `json:"id"`
+	FirstTurn bool `json:"first_turn"`
+	Training bool `json:"training"`
+	Jumps Jumps `json:"jumps"`
 	Board Board `json:"board"`
 }
 
@@ -97,6 +104,6 @@ type ResponseStatus struct {
 }
 
 type ServerMove struct {
-	Figure int `json:"figure"`
-	Color int `json:"color"`
+	Jumps Jumps `json:"jumps"`
+	Changes [][]int `json:"changes"`
 }
