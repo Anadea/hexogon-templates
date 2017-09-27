@@ -19,7 +19,7 @@ def get_handler(id):
     print('[GET] games/:id')
     print(id)
     print(request.args)
-    return jsonify(status='ok', figure=0)
+    return jsonify(status='ok', move_from=[0,2], move_to=[0,3])
 
 
 @app.route('/games/<string:id>', methods=['PUT'])
