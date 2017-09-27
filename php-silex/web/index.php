@@ -23,7 +23,7 @@
     $data = $request->query;
     error_log(print_r($id, true));
     error_log(print_r($data, true));
-    return $app->json(array('status' => 'ok', 'figure' => 0));
+    return $app->json(array('status' => 'ok', 'move_from' => [0,2], 'move_to' => [0,3]));
   });
 
   $app->put('/games/{id}', function (Silex\Application $app, Request $request, $id) {
