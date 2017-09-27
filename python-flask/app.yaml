@@ -1,8 +1,11 @@
 application: belbot
 version: 1
-runtime: python27
+runtime: python
 api_version: 1
 threadsafe: yes
+
+runtime_config:
+  python_version: 3
 
 handlers:
 - url: .*
