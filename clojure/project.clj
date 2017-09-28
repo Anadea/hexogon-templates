@@ -7,7 +7,7 @@
                  [ring-middleware-format "0.7.2"]
                  [org.clojure/tools.logging "0.4.0"]
                  [compojure/compojure "1.6.0"]
-                 [environ "1.1.0"]]
+                 [environ "1.0.0"]]
   :min-lein-version "2.0.0"
   :main com-anahoret-bot.web
   :plugins [[environ/environ.lein "0.3.1"]]
