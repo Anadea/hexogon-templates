@@ -4,9 +4,10 @@ version := "1.0"
 
 lazy val `anadea_bot` = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.12.3"
 
 libraryDependencies ++= Seq(
+  guice,
   specs2 % Test,
   "org.postgresql" % "postgresql" % "42.1.4",
   "com.typesafe.slick" %% "slick" % "3.2.1",
