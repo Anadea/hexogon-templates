@@ -1,4 +1,4 @@
-defmodule FourColorBots.GamesController do
+defmodule ItDuelBotWeb.GamesController do
   use ItDuelBotWeb, :controller
 
   require Logger
