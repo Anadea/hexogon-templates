@@ -2,7 +2,7 @@ const express = require('express')
 const router  = express.Router()
 
 const RESULT = { status: 'ok' }
-const RESULT_MOVE = { status: 'ok', figure: 0 }
+const RESULT_MOVE = { status: 'ok', move_from: [0,2], move_to: [0,3] }
 
 router.post('/', (req, res) => {
   res.json(RESULT)
