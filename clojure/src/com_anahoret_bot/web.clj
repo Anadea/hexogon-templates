@@ -4,16 +4,16 @@
   (:require [compojure.core :refer [GET POST PUT DELETE ANY context defroutes]]
             [compojure.handler :refer [site]]
             [compojure.route :as route]
-            
+
             [clojure.java.io :as io]
             [clojure.string :refer [upper-case]]
             [clojure.tools.logging :as log]
-            
+
             [ring.adapter.jetty :as jetty]
             [ring.middleware.json :refer [wrap-json-body]]
             [ring.util.response :refer [response status]]
             [ring.middleware.format-response :refer [wrap-restful-response]]
-            
+
             [environ.core :refer [env]]))
 
 (defroutes app-routes
@@ -23,7 +23,8 @@
     (context "/:id" [id]
       (GET "/" [:as req]
         (response {:status "ok"
-                   :figure 0}))
+                   :move_from [0 2]
+                   :move_to [0 3]}))
       (PUT "/" [:as req]
         (response {:status "ok"}))
       (DELETE "/" [:as req]
@@ -57,4 +58,3 @@
 (defn -main [& [port]]
   (let [port (Integer. (or port (env :port) 5000))]
     (jetty/run-jetty (site #'app) {:port port :join? false})))
-
