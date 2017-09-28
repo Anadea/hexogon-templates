@@ -11,10 +11,9 @@ object Board {
 
 }
 
-case class Board(width: Int, height: Int, figures_count: Int, cells: Array[Array[Int]]) {
+case class Board(size: Int, cells: Array[Array[Int]]) {
   override def toString: String =
-    "Board{" + "width=" + width + ", height=" + height +
-    ", figures_count=" + figures_count +
+    "Board{" + "size=" + size +
     ", cells=" + util.Arrays.deepToString(cells.asInstanceOf[Array[AnyRef]])  + "}"
 
 }

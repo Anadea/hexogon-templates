@@ -27,7 +27,7 @@ class GameController @Inject()(controllerComponents: ControllerComponents) exten
     request.getQueryString("color") match {
       case Some(c) =>
         val color = c.toInt
-        val move = ClientMove(figure = 0)
+        val move = ClientMove(move_from = Array(0,2), move_to = Array(0,3))
 
         println("makeMove endpoint hit")
         println("gameId=" + gameId)

@@ -8,4 +8,4 @@ object ClientMove {
 
 }
 
-case class ClientMove(status: String = "ok", figure: Int)
+case class ClientMove(status: String = "ok", move_from: Array[Int], move_to: Array[Int])
