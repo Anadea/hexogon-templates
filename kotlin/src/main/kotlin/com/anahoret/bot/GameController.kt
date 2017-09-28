@@ -23,7 +23,7 @@ class GameController {
     println("gameId=" + gameId)
     println("color=" + color)
 
-    return ClientMove(0)
+    return ClientMove(intArrayOf(0, 2), intArrayOf(0, 3))
   }
 
   @PutMapping(value = "/{gameId}")
