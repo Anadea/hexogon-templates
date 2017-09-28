@@ -34,7 +34,7 @@ namespace Nancy.FourColors
 					Console.WriteLine("arg = {0}, value = {1}", arg.Key, arg.Value);
 				};
 
-				var json = "{\"status\": \"ok\",\"figure\": 0}";
+				var json = "{\"status\": \"ok\",\"move_from\": [0,2],\"move_to\": [0,3]}";
 
 				var json_response = (Response)json;
 				json_response.ContentType = "application/json";
