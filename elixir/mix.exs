@@ -4,10 +4,10 @@ defmodule FourColorBots.Mixfile do
   def project do
     [app: :four_color_bots,
      version: "0.0.1",
-     elixir: "~> 1.2",
+     elixir: "~> 1.5",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps()]
   end
 
   # Configuration for the OTP application
@@ -27,9 +27,9 @@ defmodule FourColorBots.Mixfile do
   #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1.0"}
   #
   # Type "mix help deps" for more examples and options
-  defp deps do
-    [{:cowboy, "~> 1.0.0"},
-    {:plug, "~> 1.2.0"},
-    {:poison, "~> 2.2.0"}]
+  defp deps() do
+    [{:cowboy, "~> 1.1.0"},
+    {:plug, "~> 1.4.0"},
+    {:poison, "~> 3.1"}]
   end
 end
