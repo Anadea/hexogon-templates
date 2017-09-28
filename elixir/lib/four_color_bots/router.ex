@@ -27,7 +27,7 @@ defmodule FourColorBots.Router do
   get "/games/:id" do
     Logger.info id
     Logger.info inspect(conn.params)
-    render conn, %{status: "ok", figure: 0}
+    render conn, %{status: "ok", move_from: [0,2], move_to: [0,3]}
   end
 
   put "/games/:id" do
