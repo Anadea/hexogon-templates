@@ -5,12 +5,16 @@
 # is restricted to this project.
 use Mix.Config
 
+# General application configuration
+config :it_duel_bot,
+  ecto_repos: [ItDuelBot.Repo]
+
 # Configures the endpoint
-config :four_color_bots, FourColorBots.Endpoint,
+config :it_duel_bot, ItDuelBotWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "dYP8Hi1B23n8T85l531827gYICbpAuVRLPkXuki4UQPwGExE/JA36Uf1U7eGzzYM",
-  render_errors: [view: FourColorBots.ErrorView, accepts: ~w(json)],
-  pubsub: [name: FourColorBots.PubSub,
+  secret_key_base: "oBjALZ5wgskdkHvKYT1lJAHn6I7TWGhq74Td5Vl/165hBfXd60okpz+6X8l7OKS9",
+  render_errors: [view: ItDuelBotWeb.ErrorView, accepts: ~w(json)],
+  pubsub: [name: ItDuelBot.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
