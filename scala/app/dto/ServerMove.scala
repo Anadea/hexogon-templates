@@ -11,8 +11,12 @@ object ServerMove {
 
 }
 
-case class ServerMove(changes: Array[Array[Int]]) {
+case class ServerMove(
+  jumps: Map[String, Int],
+  changes: Array[Array[Int]]
+) {
   override def toString: String =
     "ServerMove{" +
-      "changes=" + util.Arrays.deepToString(changes.asInstanceOf[Array[AnyRef]])  + "}"
+    "jumps=" + jumps +
+    ", changes=" + util.Arrays.deepToString(changes.asInstanceOf[Array[AnyRef]])  + "}"
 }
